@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fa0bab0e-fa02-41c0-a638-7287334b2598" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Person/Person.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Person/Person.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,7 +23,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../assignment-one" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -63,7 +61,9 @@
       <updated>1569798148208</updated>
       <workItem from="1569798149694" duration="1875000" />
       <workItem from="1569864183059" duration="7322000" />
-      <workItem from="1569882204090" duration="4664000" />
+      <workItem from="1569882204090" duration="4974000" />
+      <workItem from="1569946973919" duration="29000" />
+      <workItem from="1569954521138" duration="64000" />
     </task>
     <servers />
   </component>
