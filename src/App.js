@@ -11,7 +11,8 @@ class App extends Component {
       {name: 'Sam', age: '31'},
       {name: 'Shari', age: '32'}
     ],
-    switch: 0
+    otherState: 'some state',
+      showPersons: false
   });
   switchNameHandler = (newName) => {
     //BAD ----> this.state.persons[0].name = 'Sean Mee'
@@ -21,7 +22,7 @@ class App extends Component {
         {name: 'Sam', age: '31'},
         {name: 'Shari', age: '27'}
       ],
-      otherState: 'Some other state'
+      otherState: 'Some other state',
     })
   };
   nameChangedHandler = (event) => {
@@ -33,6 +34,10 @@ class App extends Component {
           ],
           otherState: 'Some other state'
       })
+  };
+  togglePersonsHandler = () => {
+      const doesShow = this.state.showPersons;
+      this.setState({showPersons: !doesShow});
   };
   render(){
       const style = {
@@ -49,19 +54,24 @@ class App extends Component {
         <img src={logo} className={this.appLogo} alt="logo"/>
         <button
             style={style}
-            onClick={() => this.switchNameHandler('Sean Mee')}>Switch Name</button>
-        <Person
-            name={this.state.persons[0].name}
-            age={this.state.persons[0].age}
-            click={this.switchNameHandler.bind(this, 'Shoueyaweyn')}
-            changed={this.nameChangedHandler}>My Hobbies are Climbing, Guitar, and
-            Games</Person>
-        <Person
-            name={this.state.persons[1].name}
-            age={this.state.persons[1].age}/>
-        <Person
-            name={this.state.persons[2].name}
-            age={this.state.persons[2].age}/>
+            onClick={this.togglePersonsHandler}>Switch Name</button>
+          {
+              this.state.showPersons === true ?
+              <div>
+                <Person
+                    name={this.state.persons[0].name}
+                    age={this.state.persons[0].age}
+                    click={this.switchNameHandler.bind(this, 'Shoueyaweyn')}
+                    changed={this.nameChangedHandler}>My Hobbies are Climbing, Guitar, and
+                    Games</Person>
+                <Person
+                    name={this.state.persons[1].name}
+                    age={this.state.persons[1].age}/>
+                <Person
+                    name={this.state.persons[2].name}
+                    age={this.state.persons[2].age}/>
+              </div> : null
+          }
       </div>
     )
   // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, `Does this work now?`))
