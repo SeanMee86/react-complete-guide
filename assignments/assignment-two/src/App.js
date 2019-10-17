@@ -6,6 +6,7 @@ import './App.css';
 class App extends Component {
 
     state = {
+        inputText: '',
         inputTextLength: 0,
         characters: []
     };
@@ -21,8 +22,10 @@ class App extends Component {
     deleteCharHandle = (charIndex) => {
         const charArray = [...this.state.characters];
         charArray.splice(charIndex, 1);
+        const inputText = charArray.join('');
         this.setState({
             characters: charArray,
+            inputText
         });
     };
 
@@ -39,7 +42,10 @@ class App extends Component {
     let chars = (
         <div>
             {this.state.characters.map((char, index) => {
-                return <CharComponent click={() => this.deleteCharHandle(index)} styling={style} content={char} />
+                return <CharComponent
+                    click={() => this.deleteCharHandle(index)}
+                    styling={style}
+                    content={char} />
             })}
         </div>
     );
@@ -48,6 +54,7 @@ class App extends Component {
       <div className="App">
           <input
               type="text"
+              value={this.state.inputText}
               onChange={(event) => this.inputChangeHandler(event)}/>
           <p>{this.state.inputTextLength}</p>
           <ValidationComponent
