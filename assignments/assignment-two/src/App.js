@@ -15,7 +15,9 @@ class App extends Component {
         this.setState({
             inputText: event.target.value,
             inputTextLength: event.target.value.length,
-            characters: Array.from(event.target.value).map(char => char)
+            characters: Array
+                .from(event.target.value)
+                .map(char => char)
         });
     };
 
