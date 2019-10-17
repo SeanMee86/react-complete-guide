@@ -25,7 +25,8 @@ class App extends Component {
         const inputText = charArray.join('');
         this.setState({
             characters: charArray,
-            inputText
+            inputText,
+            inputTextLength: this.state.inputTextLength-1
         });
     };
 
