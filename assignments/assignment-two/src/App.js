@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import ValidationComponent from './ValidationComponent/ValidationComponent';
-import CharComponent from './CharComponent/CharComponent';
+import Validation from './Validation/Validation';
+import Char from './Char/Char';
 import './App.css';
 
 class App extends Component {
@@ -45,7 +45,7 @@ class App extends Component {
     let chars = (
         <div>
             {this.state.characters.map((char, index) => {
-                return <CharComponent
+                return <Char
                     click={() => this.deleteCharHandle(index)}
                     styling={style}
                     content={char} />
@@ -60,7 +60,7 @@ class App extends Component {
               value={this.state.inputText}
               onChange={(event) => this.inputChangeHandler(event)}/>
           <p>{this.state.inputTextLength}</p>
-          <ValidationComponent
+          <Validation
               textLength={this.state.inputTextLength}/>
           {chars}
       </div>

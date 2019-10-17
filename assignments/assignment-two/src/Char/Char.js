@@ -1,6 +1,6 @@
 import React from 'react'
 
-const charChomponent = (props) => {
+const char = (props) => {
     return(
         <p
             onClick={props.click}
@@ -9,4 +9,4 @@ const charChomponent = (props) => {
     )
 };
 
-export default charChomponent;
+export default char;
