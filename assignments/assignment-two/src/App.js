@@ -31,23 +31,30 @@ class App extends Component {
     };
 
   render() {
-      const style = {
-          display: "inline-block",
-          width: "20px",
-          height: "20px",
+      const charStyle = {
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          fontSize: "60px",
+          width: "60px",
+          height: "60px",
           color: "white",
           backgroundColor: "gray",
           border: "1px solid teal",
           padding: "5px",
           margin: "3px"
       };
+      const style = {
+          display: "flex",
+          justifyContent: "center"
+      };
 
     let chars = (
-        <div>
+        <div style={style}>
             {this.state.characters.map((char, index) => {
                 return <Char
                     click={() => this.deleteCharHandle(index)}
-                    styling={style}
+                    styling={charStyle}
                     content={char} />
             })}
         </div>

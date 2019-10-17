@@ -5,7 +5,7 @@ const char = (props) => {
         <p
             onClick={props.click}
             className={'singleChar'}
-            style={props.styling}>{props.content}</p>
+            style={props.styling}>{props.content.toUpperCase()}</p>
     )
 };
 
