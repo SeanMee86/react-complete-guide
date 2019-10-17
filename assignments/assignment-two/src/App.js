@@ -55,6 +55,7 @@ class App extends Component {
         <div style={style}>
             {this.state.characters.map((char, index) => {
                 return <Char
+                    key={index}
                     click={() => this.deleteCharHandle(index)}
                     styling={charStyle}
                     content={char} />
