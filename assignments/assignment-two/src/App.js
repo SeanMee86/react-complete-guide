@@ -33,6 +33,8 @@ class App extends Component {
   render() {
       const style = {
           display: "inline-block",
+          width: "20px",
+          height: "20px",
           color: "white",
           backgroundColor: "gray",
           border: "1px solid teal",
