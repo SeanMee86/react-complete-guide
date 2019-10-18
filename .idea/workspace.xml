@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fa0bab0e-fa02-41c0-a638-7287334b2598" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    <change beforePath="$PROJECT_DIR$/assignments/assignment-two/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/assignments/assignment-two/src/App.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -158,8 +158,17 @@
       <updated>1569798148208</updated>
       <workItem from="1569798149694" duration="1875000" />
       <workItem from="1569864183059" duration="7322000" />
-      <workItem from="1569882204090" duration="4664000" />
-      <workItem from="1569896400596" duration="1079000" />
+      <workItem from="1569882204090" duration="4974000" />
+      <workItem from="1569946973919" duration="29000" />
+      <workItem from="1569954521138" duration="64000" />
+      <workItem from="1570059172459" duration="969000" />
+      <workItem from="1570120317328" duration="4857000" />
+      <workItem from="1570217280083" duration="176000" />
+      <workItem from="1570229072517" duration="2560000" />
+      <workItem from="1570553641306" duration="9000" />
+      <workItem from="1571335519443" duration="3634000" />
+      <workItem from="1571343602453" duration="3037000" />
+      <workItem from="1571348717591" duration="2804000" />
     </task>
     <servers />
   </component>
