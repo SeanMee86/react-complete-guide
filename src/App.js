@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import './App.css';
+import styles from './App.css';
 import Person from './Person/Person';
 
 class App extends Component {
@@ -37,18 +37,11 @@ class App extends Component {
   togglePersonsHandler = () => this.setState({showPersons: !this.state.showPersons});
 
   render(){
-      const style = {
-          backgroundColor: 'green',
-          font: 'inherit',
-          border: '1px solid blue',
-          padding: '8px',
-          cursor: 'pointer',
-          color: 'white'
-      };
 
     let persons = null;
+    let btnClass = '';
 
-    if(this.state.showPersons){
+      if(this.state.showPersons){
         persons = (
             <div>
                 {this.state.persons.map((person, index) =>
@@ -62,26 +55,24 @@ class App extends Component {
                 }
             </div>
         );
-        style.backgroundColor = 'red';
-
+        btnClass = styles.Red;
     }
 
     let classes = [];
-
     if(this.state.persons.length <= 2){
-        classes.push('red');
+        classes.push(styles.red);
     }
     if(this.state.persons.length <= 1){
-        classes.push('bold')
+        classes.push(styles.bold)
     }
 
     return (
-      <div className="App">
+      <div className={styles.App}>
         <h1>Hi I'm react App</h1>
         <p className={classes.join(' ')}>This is working! Look at the fancy spinner!</p>
-        <img src={logo} className={this.appLogo} alt="logo"/>
+        <img src={logo} className={styles.AppLogo} alt="logo"/>
         <button
-            style={style}
+            className={btnClass}
             onClick={this.togglePersonsHandler}>Toggle Names</button>
         {persons}
       </div>
