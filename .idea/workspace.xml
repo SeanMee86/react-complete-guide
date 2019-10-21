@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fa0bab0e-fa02-41c0-a638-7287334b2598" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/assignments/assignment-two/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/assignments/assignment-two/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Person/Person.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Person/Person.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Person/Person.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Person/Person.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -71,7 +77,9 @@
       <workItem from="1570553641306" duration="9000" />
       <workItem from="1571335519443" duration="3634000" />
       <workItem from="1571343602453" duration="3037000" />
-      <workItem from="1571348717591" duration="2804000" />
+      <workItem from="1571348717591" duration="3625000" />
+      <workItem from="1571428588237" duration="19000" />
+      <workItem from="1571692181710" duration="4004000" />
     </task>
     <servers />
   </component>

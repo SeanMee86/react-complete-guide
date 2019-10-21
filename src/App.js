@@ -14,7 +14,7 @@ class App extends Component {
         {id: 4, name: 'Brooke', age: '31'}
     ],
     otherState: 'some state',
-    showPersons: false
+    showPersons: false,
   });
 
   nameChangedHandler = (event, id) => {
@@ -38,11 +38,12 @@ class App extends Component {
 
   render(){
       const style = {
-          backgroundColor: 'white',
+          backgroundColor: 'green',
           font: 'inherit',
           border: '1px solid blue',
           padding: '8px',
-          cursor: 'pointer'
+          cursor: 'pointer',
+          color: 'white'
       };
 
     let persons = null;
@@ -60,16 +61,28 @@ class App extends Component {
                     )
                 }
             </div>
-        )
+        );
+        style.backgroundColor = 'red';
+
     }
+
+    let classes = [];
+
+    if(this.state.persons.length <= 2){
+        classes.push('red');
+    }
+    if(this.state.persons.length <= 1){
+        classes.push('bold')
+    }
+
     return (
       <div className="App">
         <h1>Hi I'm react App</h1>
-        <p>This is working! Look at the fancy spinner!</p>
+        <p className={classes.join(' ')}>This is working! Look at the fancy spinner!</p>
         <img src={logo} className={this.appLogo} alt="logo"/>
         <button
             style={style}
-            onClick={this.togglePersonsHandler}>Switch Name</button>
+            onClick={this.togglePersonsHandler}>Toggle Names</button>
         {persons}
       </div>
     )
