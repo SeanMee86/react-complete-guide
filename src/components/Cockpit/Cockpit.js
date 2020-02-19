@@ -4,9 +4,15 @@ import styles from "./Cockpit.css";
 
 const cockpit = (props) => {
     useEffect(() => {
-        console.log('useEffect');
-        setTimeout(() => alert('Data logged'), 1000);
+        console.log(props);
+        return () => console.log('Clean up work in useEffect!');
+    }, []);
+
+    useEffect(() => {
+        console.log('2nd useEffect/Cockpit');
+        return () => console.log('cleanup work in 2nd useEffect/Cockpit');
     });
+
     const classes = [];
     let btnClass = '';
     props.showPersons ? btnClass = styles.Red : btnClass = '';

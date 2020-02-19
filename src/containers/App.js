@@ -14,6 +14,7 @@ class App extends Component {
         {id: 4, name: 'Brooke', age: '31'}
     ],
     showPersons: false,
+    showCockpit: true
   });
 
   nameChangedHandler = (event, id) => {
@@ -49,11 +50,12 @@ class App extends Component {
 
     return (
       <div className={styles.App}>
-        <Cockpit
+          <button onClick={() => this.setState({showCockpit: !this.state.showCockpit})}>show cockpit</button>
+          {this.state.showCockpit ? <Cockpit
             title={this.props.appTitle}
             showPersons={this.state.showPersons}
             persons={this.state.persons}
-            clicked={this.togglePersonsHandler}/>
+            clicked={this.togglePersonsHandler}/> : null}
         {persons}
       </div>
     )
