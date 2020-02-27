@@ -4,8 +4,10 @@ import styles from "./Cockpit.css";
 
 const cockpit = (props) => {
     useEffect(() => {
-        console.log(props);
-        return () => console.log('Clean up work in useEffect!');
+        console.log('cockpit js use effect');
+        return () => {
+            console.log('Clean up work in useEffect!');
+        }
     }, []);
 
     useEffect(() => {
