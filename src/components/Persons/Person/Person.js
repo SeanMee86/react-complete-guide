@@ -1,5 +1,6 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 import styles from './Person.css';
+import Aux from '../../../hoc/Auxiliary'
 
 class Person extends Component {
     // const rnd = Math.random();
@@ -9,11 +10,11 @@ class Person extends Component {
     // }
     render() {
         return (
-            <div className={styles.Person}>
+            <Fragment>
                 <h4 onClick={this.props.click}>My name is {this.props.name} and I am {this.props.age} years old!</h4>
                 <p>{this.props.children}</p>
                 <input type="text" onChange={this.props.changed} value={this.props.name}/>
-            </div>
+            </Fragment>
         )
     }
 }

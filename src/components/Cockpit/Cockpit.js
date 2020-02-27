@@ -1,4 +1,7 @@
-import React, {useEffect} from 'react';
+import React, {
+    useEffect,
+    memo
+} from 'react';
 import logo from "../../assets/images/logo.svg";
 import styles from "./Cockpit.css";
 
@@ -18,10 +21,10 @@ const cockpit = (props) => {
     const classes = [];
     let btnClass = '';
     props.showPersons ? btnClass = styles.Red : btnClass = '';
-    if(props.persons.length <= 2){
+    if(props.personsLength <= 2){
         classes.push(styles.red);
     }
-    if(props.persons.length <= 1){
+    if(props.personsLength <= 1){
         classes.push(styles.bold)
     }
 
@@ -37,4 +40,4 @@ const cockpit = (props) => {
     );
 };
 
-export default cockpit;
+export default memo(cockpit);
