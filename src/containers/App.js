@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
+import React, {Component, Fragment} from 'react';
 import styles from './App.css';
 import Persons from '../components/Persons/Persons'
 import Cockpit from '../components/Cockpit/Cockpit'
 // import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
+import withClass from '../hoc/withClass'
 
 class App extends Component {
 
@@ -49,7 +50,7 @@ class App extends Component {
     }
 
     return (
-      <div className={styles.App}>
+      <Fragment>
           <button onClick={() => this.setState({showCockpit: !this.state.showCockpit})}>show cockpit</button>
           {this.state.showCockpit ? <Cockpit
             title={this.props.appTitle}
@@ -57,10 +58,10 @@ class App extends Component {
             personsLength={this.state.persons.length}
             clicked={this.togglePersonsHandler}/> : null}
         {persons}
-      </div>
+      </Fragment>
     )
   // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, `Does this work now?`))
   }
 }
 
-export default App;
+export default withClass(App, styles.App);

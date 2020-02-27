@@ -1,6 +1,7 @@
 import React, {Component, Fragment} from 'react';
 import styles from './Person.css';
 import Aux from '../../../hoc/Auxiliary'
+import withClass from "../../../hoc/withClass";
 
 class Person extends Component {
     // const rnd = Math.random();
@@ -19,4 +20,4 @@ class Person extends Component {
     }
 }
 
-export default Person;
+export default withClass(Person,styles.Person);
