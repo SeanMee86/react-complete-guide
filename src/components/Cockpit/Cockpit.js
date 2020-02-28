@@ -1,5 +1,6 @@
 import React, {
     useEffect,
+    useRef,
     memo
 } from 'react';
 import logo from "../../assets/images/logo.svg";
@@ -8,6 +9,7 @@ import styles from "./Cockpit.css";
 const cockpit = (props) => {
     useEffect(() => {
         console.log('cockpit js use effect');
+        buttonElRef.current.click();
         return () => {
             console.log('Clean up work in useEffect!');
         }
@@ -17,6 +19,8 @@ const cockpit = (props) => {
         console.log('2nd useEffect/Cockpit');
         return () => console.log('cleanup work in 2nd useEffect/Cockpit');
     });
+
+    const buttonElRef = useRef();
 
     const classes = [];
     let btnClass = '';
@@ -35,7 +39,9 @@ const cockpit = (props) => {
             <img src={logo} className={styles.CockpitLogo} alt="logo"/>
             <button
                 className={btnClass}
+                ref={buttonElRef}
                 onClick={props.clicked}>Toggle Names</button>
+            <button onClick={props.login}>Log in</button>
         </div>
     );
 };

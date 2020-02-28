@@ -15,8 +15,13 @@ class App extends Component {
         {id: 4, name: 'Brooke', age: '31'}
     ],
     showPersons: false,
-    showCockpit: true
+    showCockpit: true,
+    authenticated: false
   });
+
+  loginHandler = () => {
+      this.setState({authenticated: true})
+  };
 
   nameChangedHandler = (event, id) => {
       const personIndex = this.state.persons.findIndex(p => p.id === id);
@@ -46,6 +51,7 @@ class App extends Component {
                     persons={this.state.persons}
                     clicked={this.deletePersonHandler}
                     changed={this.nameChangedHandler}
+                    isAuthenticated={this.state.authenticated}
             />;
     }
 
@@ -53,6 +59,7 @@ class App extends Component {
       <Fragment>
           <button onClick={() => this.setState({showCockpit: !this.state.showCockpit})}>show cockpit</button>
           {this.state.showCockpit ? <Cockpit
+            login={this.loginHandler}
             title={this.props.appTitle}
             showPersons={this.state.showPersons}
             personsLength={this.state.persons.length}
