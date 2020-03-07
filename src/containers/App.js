@@ -4,6 +4,7 @@ import Persons from '../components/Persons/Persons'
 import Cockpit from '../components/Cockpit/Cockpit'
 // import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
 import withClass from '../hoc/withClass'
+import AuthContext from '../context/auth-context'
 
 class App extends Component {
 
@@ -20,7 +21,7 @@ class App extends Component {
   });
 
   loginHandler = () => {
-      this.setState({authenticated: true})
+      this.setState({authenticated: !this.state.authenticated})
   };
 
   nameChangedHandler = (event, id) => {
@@ -58,13 +59,21 @@ class App extends Component {
     return (
       <Fragment>
           <button onClick={() => this.setState({showCockpit: !this.state.showCockpit})}>show cockpit</button>
-          {this.state.showCockpit ? <Cockpit
-            login={this.loginHandler}
-            title={this.props.appTitle}
-            showPersons={this.state.showPersons}
-            personsLength={this.state.persons.length}
-            clicked={this.togglePersonsHandler}/> : null}
-        {persons}
+          <AuthContext.Provider
+              value={
+                  {
+                      authenticated: this.state.authenticated,
+                      login: this.loginHandler
+                  }
+              }>
+              {this.state.showCockpit ? <Cockpit
+                login={this.loginHandler}
+                title={this.props.appTitle}
+                showPersons={this.state.showPersons}
+                personsLength={this.state.persons.length}
+                clicked={this.togglePersonsHandler}/> : null}
+                {persons}
+          </AuthContext.Provider>
       </Fragment>
     )
   // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, `Does this work now?`))

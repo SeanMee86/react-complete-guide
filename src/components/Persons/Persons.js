@@ -12,18 +12,18 @@ class Persons extends PureComponent{
     // }
 
     render() {
-            return (
-                this.props.persons.map((person, index) => (
-                    <Person
-                        name={person.name}
-                        age={person.age}
-                        click={() => this.props.clicked(index)}
-                        key={person.id}
-                        changed={(event) => this.props.changed(event, person.id)}
-                        isAuth={this.props.isAuthenticated}/>
-                    )
+        return (
+            this.props.persons.map((person, index) => (
+                <Person
+                    name={person.name}
+                    age={person.age}
+                    click={() => this.props.clicked(index)}
+                    key={person.id}
+                    changed={(event) => this.props.changed(event, person.id)}
+                    isAuth={this.props.isAuthenticated}/>
                 )
-            );
+            )
+        );
     }
 }
 

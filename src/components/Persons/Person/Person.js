@@ -1,8 +1,9 @@
 import React, {Component, Fragment} from 'react';
 import styles from './Person.css';
-import Aux from '../../../hoc/Auxiliary';
+// import Aux from '../../../hoc/Auxiliary';
 import PropTypes from 'prop-types';
 import withClass from "../../../hoc/withClass";
+import AuthContext from '../../../context/auth-context'
 
 class Person extends Component {
     // const rnd = Math.random();
@@ -11,8 +12,10 @@ class Person extends Component {
     //     throw new Error('Something went wrong');
     // }
 
+    static contextType = AuthContext;
+
     constructor(props) {
-        super(props)
+        super(props);
         this.inputElementRef = React.createRef();
     }
 
@@ -23,7 +26,7 @@ class Person extends Component {
     render() {
         return (
             <Fragment>
-                {this.props.isAuth ? <p>Authenticated!</p> : <p>Please Login</p>}
+                {this.context.authenticated ? <p>Authenticated!</p> : <p>Please Login</p>}
                 <h4 onClick={this.props.click}>
                     My name is {this.props.name} and I am {this.props.age} years old!
                 </h4>

@@ -1,12 +1,17 @@
 import React, {
     useEffect,
     useRef,
+    useContext,
     memo
 } from 'react';
 import logo from "../../assets/images/logo.svg";
 import styles from "./Cockpit.css";
+import AuthContext from '../../context/auth-context'
 
 const cockpit = (props) => {
+
+    const authContext = useContext(AuthContext);
+
     useEffect(() => {
         console.log('cockpit js use effect');
         buttonElRef.current.click();
@@ -41,7 +46,7 @@ const cockpit = (props) => {
                 className={btnClass}
                 ref={buttonElRef}
                 onClick={props.clicked}>Toggle Names</button>
-            <button onClick={props.login}>Log in</button>
+                {<button onClick={() => authContext.login()}>{authContext.authenticated ? 'Log In' : 'Log Out'}</button>}
         </div>
     );
 };
