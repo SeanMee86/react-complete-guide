@@ -4,7 +4,8 @@ import Post from '../../components/Post/Post';
 import FullPost from '../../components/FullPost/FullPost';
 import NewPost from '../../components/NewPost/NewPost';
 import './Blog.css';
-import axios from 'axios';
+// import axios from 'axios';
+import axiosInstance from "../../axios";
 
 class Blog extends Component {
 
@@ -18,7 +19,7 @@ class Blog extends Component {
         // axios.get('https://jsonplaceholder.typicode.com/posts')
         //     .then(res => console.log(res));
         try {
-            const res = await axios.get('https://jsonplaceholder.typicode.com/posts');
+            const res = await axiosInstance.get('/posts');
             const posts = res.data.slice(0,4);
             const updatedPosts = posts.map(post => {
                 return {
@@ -29,6 +30,7 @@ class Blog extends Component {
             this.setState({posts: updatedPosts})
         }catch(err){
             this.setState({error: true});
+            console.log(err)
         }
     }
 
