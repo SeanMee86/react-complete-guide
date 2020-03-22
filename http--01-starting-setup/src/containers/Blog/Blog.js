@@ -19,7 +19,7 @@ class Blog extends Component {
                                     textDecoration: 'underline'
                                 }}
                                 activeClassName={'my-active'}
-                                to="/"
+                                to="/posts"
                                 exact>Posts</NavLink></li>
                             <li><NavLink to={{
                                 // Relative Path -----> pathname: this.props.match.url + '/new-post',
@@ -31,9 +31,8 @@ class Blog extends Component {
                     </nav>
                 </header>
                 <Switch>
-                    <Route path={'/'} exact component={Posts}/>
                     <Route path={'/new-post'} exact component={NewPost}/>
-                    <Route path={'/:id'} exact component={FullPost}/>
+                    <Route path={'/posts'} component={Posts}/>
                 </Switch>
             </div>
         );
