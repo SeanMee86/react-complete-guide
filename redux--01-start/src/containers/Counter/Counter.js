@@ -1,38 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import {
+    increment,
+    decrement,
+    add,
+    subtract,
+    storeResult,
+    deleteResult
+} from '../../store/actions';
 
 import CounterControl from '../../components/CounterControl/CounterControl';
 import CounterOutput from '../../components/CounterOutput/CounterOutput';
-import {
-    INCREMENT,
-    DECREMENT,
-    ADD,
-    SUBTRACT,
-    STORE_RESULT,
-    DELETE_RESULT
-} from '../../store/actions';
 
 class Counter extends Component {
-    // state = {
-    //     counter: 0
-    // };
-    //
-    // counterChangedHandler = ( action, value ) => {
-    //     switch ( action ) {
-    //         case 'inc':
-    //             this.setState( ( prevState ) => { return { counter: prevState.counter + 1 } } );
-    //             break;
-    //         case 'dec':
-    //             this.setState( ( prevState ) => { return { counter: prevState.counter - 1 } } );
-    //             break;
-    //         case 'add':
-    //             this.setState( ( prevState ) => { return { counter: prevState.counter + value } } );
-    //             break;
-    //         case 'sub':
-    //             this.setState( ( prevState ) => { return { counter: prevState.counter - value } } );
-    //             break;
-    //     }
-    // };
 
     subtractFromCounter(){
         this.props.onSubtractFromCounter(7);
@@ -64,12 +44,12 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    onIncrementCounter: () => dispatch({type: INCREMENT}),
-    onDecrementCounter: () => dispatch({type: DECREMENT}),
-    onAddToCounter: () => dispatch({type: ADD, value: 10}),
-    onSubtractFromCounter: (num) => dispatch({type: SUBTRACT, value: num}),
-    onStoreResult: (result) => dispatch({type: STORE_RESULT, result}),
-    onDeleteResult: (id) => dispatch({type: DELETE_RESULT, id})
+    onIncrementCounter: () => dispatch(increment()),
+    onDecrementCounter: () => dispatch(decrement()),
+    onAddToCounter: () => dispatch(add()),
+    onSubtractFromCounter: (num) => dispatch(subtract(num)),
+    onStoreResult: (result) => dispatch(storeResult(result)),
+    onDeleteResult: (id) => dispatch(deleteResult(id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Counter);
